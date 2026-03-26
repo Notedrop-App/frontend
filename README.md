@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://notedrop.app/favicon.png" alt="Notedrop Logo" width="80" height="80">
+  <img src="https://notedrop.app/favicon.jpg" alt="Notedrop Logo" width="80" height="80">
 </p>
 
 <h1 align="center">Notedrop</h1>
