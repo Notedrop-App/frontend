@@ -94,8 +94,19 @@ Open [http://localhost:3000](http://localhost:3000) to see Notedrop in action.
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
 - **Backend**: [Go](https://go.dev)
-- **Database**: [MongoDB](https://mongodb.com)
-- **AI**: [Open AI Models](https://huggingface.co/)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- AI (client) | [Transformers.js](https://huggingface.co/docs/transformers.js) — runs fully in-browser
+- AI (server) | Go-based TTS pipeline for Podcast generation
+---
+
+## Security Model
+ 
+Notedrop uses an asymmetric encryption model:
+ 
+- Your **private key** is derived from your password using Argon2id and stored only in your browser's local storage — never sent to the server
+- Your **public key** is stored in the database and will be used in the future for note sharing and collaboration features
+- All AI processing for private notes happens **before encryption** on the client, so generated content (flashcards, etc.) is encrypted alongside the note before being sent to the backend
+- The Go backend stores and retrieves encrypted blobs — it never has access to your plaintext notes
 ---
 
 ## Contributing
