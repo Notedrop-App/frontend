@@ -100,7 +100,7 @@ export function DashboardPreview() {
   };
 
   return (
-    <section className="relative pb-16">
+    <section className="relative pb-16 hidden md:block">
       <div className="max-w-[1060px] mx-auto px-4">
         <div className="relative bg-white rounded-lg shadow-2xl border border-[#e0dedb] overflow-hidden">
           <div className="flex h-[600px]">
