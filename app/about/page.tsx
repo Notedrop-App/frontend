@@ -60,7 +60,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <Link
-                  href="https://github.com/notedrop/notedrop"
+                  href="https://github.com/notedrop-app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-[#37322f] text-white rounded-lg hover:bg-[#49423D] transition-colors font-medium text-sm"
@@ -69,7 +69,7 @@ export default function AboutPage() {
                   View Source
                 </Link>
                 <Link
-                  href="https://github.com/notedrop/notedrop/blob/main/LICENSE"
+                  href="https://github.com/notedrop-app/frontend/blob/main/LICENSE"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 border border-[#37322f]/20 rounded-lg hover:bg-[#37322f]/5 transition-colors font-medium text-sm text-[#37322f]"
@@ -97,7 +97,7 @@ export default function AboutPage() {
               </p>
               <div className="flex flex-wrap gap-3 pt-4">
                 <Link
-                  href="https://github.com/notedrop/notedrop/discussions"
+                  href="https://github.com/notedrop-app/frontend/discussions"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 border border-[#37322f]/20 rounded-lg hover:bg-[#37322f]/5 transition-colors font-medium text-sm text-[#37322f]"
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   Join Discussions
                 </Link>
                 <Link
-                  href="https://github.com/notedrop/notedrop/blob/main/CONTRIBUTING.md"
+                  href="https://github.com/notedrop-app/frontend/blob/main/CONTRIBUTING.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 border border-[#37322f]/20 rounded-lg hover:bg-[#37322f]/5 transition-colors font-medium text-sm text-[#37322f]"
@@ -253,7 +253,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
-              href="https://github.com/notedrop/notedrop"
+              href="https://github.com/notedrop-app"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 bg-[#37322f] text-white rounded-lg hover:bg-[#49423D] transition-colors font-medium"

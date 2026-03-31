@@ -71,7 +71,7 @@ Your private notes are encrypted. Public notes in the Community Library are stor
 
 ```bash
 # Clone the repository
-git clone https://github.com/skulix01/notedrop.git
+git clone https://github.com/Notedrop-App/frontend.git
 cd notedrop
 
 # Install dependencies
