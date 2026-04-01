@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import logo from "@/public/favicon.jpg";
 import {
   FileText,
   Star,
@@ -108,9 +110,7 @@ export function DashboardPreview() {
             <div className="w-64 bg-gradient-to-b from-[#fbfaf9] to-[#f5f1ed] border-r border-[#e0dedb] flex flex-col">
               <div className="p-6 border-b border-[#e0dedb]">
                 <div className="flex items-center gap-2 mb-4">
-                  <div className="w-8 h-8 bg-[#37322f] rounded-lg flex items-center justify-center text-white font-bold">
-                    N
-                  </div>
+                  <Image src={logo} className="h-8 w-8 rounded-lg" alt="logo" />
                   <span className="text-lg font-semibold text-[#37322f]">
                     Notedrop
                   </span>
