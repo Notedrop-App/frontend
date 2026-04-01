@@ -9,7 +9,7 @@ export function FeatureCards() {
     {
       title: "100% Open Source",
       description:
-        "Every line of code is public. Fork it,\nmodify it, make it yours. MIT licensed.",
+        "Every line of code is public. Fork it,\nmodify it, make it yours. AGPL v3.0 licensed.",
     },
     {
       title: "Self-Host or Cloud",
