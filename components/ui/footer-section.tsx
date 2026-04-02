@@ -197,7 +197,7 @@ export default function FooterSection() {
                 About
               </a>
               <a
-                href="/privacy"
+                href="/legal/privacy"
                 className="text-[#49423D] text-sm font-normal leading-5 font-sans cursor-pointer hover:underline transition-colors"
               >
                 Privacy
@@ -224,7 +224,10 @@ export default function FooterSection() {
       {/* Bottom Bar */}
       <div className="w-full border-t border-[#49423D]/10 px-4 md:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
         <p className="text-[#49423D]/60 text-xs font-mono">
-          Made with care by contributors worldwide
+          Independent. Open. Yours.
+        </p>
+        <p className="text-[#49423D]/60 text-xs font-mono">
+          🇪🇺 Built & hosted in Europe
         </p>
         <p className="text-[#49423D]/60 text-xs font-mono">
           No tracking. No telemetry. Your notes, your data.
