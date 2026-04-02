@@ -9,7 +9,6 @@ export function HeroSection() {
     <section className="relative pt-32 pb-16">
       <div className="max-w-[1060px] mx-auto px-4">
         <div className="flex flex-col items-center gap-12">
-          {/* Open Source Badge */}
           <div className="flex items-center gap-2 px-4 py-2 bg-[#37322f]/5 rounded-full border border-[#37322f]/10">
             <HeartIcon className="w-4 h-4 text-[#37322f]" />
             <span className="text-sm font-medium text-[#37322f]">
