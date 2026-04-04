@@ -9,6 +9,7 @@ import {
   Lock,
   Globe,
 } from "lucide-react";
+import { ChatCircleIcon } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
 
 export default function AboutPage() {
@@ -268,21 +269,13 @@ export default function AboutPage() {
               Star on GitHub
             </Link>
             <Link
-              href="https://matrix.to/#/#notedrop:matrix.org"
+              href="https://discord.gg/w6vHMTdR3m"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3 border border-[#37322f]/20 rounded-lg hover:bg-[#37322f]/5 transition-colors font-medium text-[#37322f]"
             >
-              Chat on Matrix
-            </Link>
-            <Link
-              href="https://opencollective.com/notedrop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3 border border-[#37322f]/20 rounded-lg hover:bg-[#37322f]/5 transition-colors font-medium text-[#37322f]"
-            >
-              <Heart className="w-5 h-5" />
-              Sponsor
+              <ChatCircleIcon className="w-4 h-4 text-[#37322f]" />
+              Chat on Discord
             </Link>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default function FooterSection() {
               </svg>
             </a>
             <a
-              href="https://fosstodon.org/@notedrop"
+              href="https://mastodon.social/@notedrop"
               target="_blank"
               rel="noopener noreferrer"
               className="w-6 h-6 cursor-pointer hover:opacity-70 transition-opacity"
@@ -223,9 +223,6 @@ export default function FooterSection() {
 
       {/* Bottom Bar */}
       <div className="w-full border-t border-[#49423D]/10 px-4 md:px-8 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <p className="text-[#49423D]/60 text-xs font-mono">
-          Independent. Open. Yours.
-        </p>
         <p className="text-[#49423D]/60 text-xs font-mono">
           🇪🇺 Built & hosted in Europe
         </p>

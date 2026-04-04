@@ -39,7 +39,10 @@ export default function PrivacyPage() {
                   - We collect only what is necessary to provide the service
                 </li>
                 <li>- No tracking, no analytics, no ads</li>
-                <li>- Your notes remain private</li>
+                <li>
+                  - Your notes are private by design — private notes are
+                  end-to-end encrypted and we cannot access their content
+                </li>
                 <li>
                   - AI features run locally in your browser (no data leaves your
                   device)
@@ -126,8 +129,10 @@ export default function PrivacyPage() {
                 </p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    <strong>Server logs:</strong> requested route and HTTP
-                    status code
+                    <strong>Server logs:</strong> requested route, HTTP status
+                    code, and IP address (retained only as long as necessary for
+                    security and operational purposes; not used for tracking or
+                    profiling)
                   </li>
                   <li>
                     <strong>Session data:</strong> authentication tokens
@@ -181,7 +186,7 @@ export default function PrivacyPage() {
                           Contract (Art. 6(1)(b))
                         </td>
                       </tr>
-                      <tr className="bg-[#f5f1ed]">
+                      <tr className="bg-[#faf9f7]">
                         <td className="border border-[#e0dedb] p-3">
                           Notes/content
                         </td>
@@ -203,7 +208,7 @@ export default function PrivacyPage() {
                           Legitimate interest (Art. 6(1)(f))
                         </td>
                       </tr>
-                      <tr className="bg-[#f5f1ed]">
+                      <tr className="bg-[#faf9f7]">
                         <td className="border border-[#e0dedb] p-3">
                           Support emails
                         </td>
@@ -217,12 +222,23 @@ export default function PrivacyPage() {
                     </tbody>
                   </table>
                 </div>
+
+                <p>We may also process personal data where necessary to:</p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Comply with legal obligations (Art. 6(1)(c) GDPR)</li>
+                  <li>
+                    Establish, exercise, or defend legal claims (Art. 6(1)(f)
+                    GDPR)
+                  </li>
+                </ul>
+
                 <p>
                   <strong>Legitimate interest justification:</strong> We process
                   only minimal technical data strictly necessary to ensure
-                  service functionality and security. This does not override
-                  user rights due to the absence of tracking, profiling, or
-                  behavioral analysis.
+                  service functionality and security. We have assessed that our
+                  legitimate interests are not overridden by your rights and
+                  freedoms, given the limited scope of data processing and
+                  absence of tracking or profiling.
                 </p>
               </section>
 
@@ -237,7 +253,7 @@ export default function PrivacyPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
                     All processing happens on your device using client-side
-                    models (e.g., via transformers.js)
+                    models (e.g., via Transformers.js)
                   </li>
                   <li>
                     No note content is sent to our servers for AI processing
@@ -248,6 +264,50 @@ export default function PrivacyPage() {
                 </ul>
                 <p>
                   AI features are activated only when you explicitly use them.
+                </p>
+              </section>
+
+              <section className="space-y-3">
+                <h2 className="text-2xl font-bold text-[#37322f]">
+                  4A. End-to-End Encryption
+                </h2>
+                <p>
+                  Notedrop supports optional end-to-end encryption (E2EE) for
+                  private notes.
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>
+                    When a note is marked as <strong>private</strong>, it is
+                    encrypted on your device before being sent to our servers
+                  </li>
+                  <li>
+                    We store only encrypted data and{" "}
+                    <strong>cannot access the plaintext content</strong> of
+                    these notes
+                  </li>
+                  <li>
+                    Decryption occurs locally in your browser using your
+                    encryption keys
+                  </li>
+                </ul>
+                <p>
+                  <strong>For public notes:</strong>
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  <li>Content is not end-to-end encrypted</li>
+                  <li>
+                    It is protected using standard security measures (encryption
+                    in transit and at rest)
+                  </li>
+                  <li>
+                    We may process this content as necessary to provide the
+                    Service
+                  </li>
+                </ul>
+                <p>
+                  For end-to-end encrypted data, we may be unable to provide
+                  access to plaintext content in response to data access
+                  requests, as we do not possess the decryption keys.
                 </p>
               </section>
 
@@ -271,8 +331,9 @@ export default function PrivacyPage() {
                     >
                       notedrop.app/legal/subprocessors
                     </Link>
-                    . These providers process data on our behalf under Data
-                    Processing Agreements in accordance with Article 28 GDPR.
+                    . All subprocessors are contractually bound by Data
+                    Processing Agreements and may only process personal data on
+                    our documented instructions and in accordance with GDPR.
                   </li>
                   <li>
                     <strong>Legal authorities:</strong> Only where required by
@@ -292,9 +353,19 @@ export default function PrivacyPage() {
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Encryption in transit (TLS 1.3)</li>
                   <li>Encryption at rest (database-level)</li>
+                  <li>
+                    End-to-end encryption for private notes (we cannot access
+                    plaintext)
+                  </li>
                   <li>Encrypted backups</li>
                   <li>Access controls (minimal access principle)</li>
                 </ul>
+                <p>
+                  Content is processed automatically by our systems and is not
+                  accessed in human-readable form except where strictly
+                  necessary, such as for security incidents, abuse prevention,
+                  or compliance with legal obligations.
+                </p>
                 <p>
                   Data is hosted within the European Economic Area (EEA),
                   specifically in data centers located in the Netherlands.
@@ -360,7 +431,10 @@ export default function PrivacyPage() {
                   <li>Rectify inaccurate data (Art. 16)</li>
                   <li>Erase your data (Art. 17)</li>
                   <li>Restrict processing (Art. 18)</li>
-                  <li>Data portability (Art. 20)</li>
+                  <li>
+                    Data portability (Art. 20) — exports are provided in a
+                    structured, commonly used, and machine-readable format
+                  </li>
                   <li>Object to processing (Art. 21)</li>
                 </ul>
                 <p>
@@ -388,11 +462,25 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  10. Cookies
+                  10. Automated Decision-Making
+                </h2>
+                <p>
+                  We do not use automated decision-making or profiling that
+                  produces legal or similarly significant effects on users
+                  within the meaning of Article 22 GDPR.
+                </p>
+              </section>
+
+              <section className="space-y-3">
+                <h2 className="text-2xl font-bold text-[#37322f]">
+                  11. Cookies
                 </h2>
                 <p>We use only strictly necessary cookies:</p>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Session cookie (authentication)</li>
+                  <li>
+                    Session cookie (authentication) — deleted when you close
+                    your browser
+                  </li>
                   <li>CSRF token (security)</li>
                 </ul>
                 <p>
@@ -403,7 +491,20 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  11. Children
+                  12. Use of Sensitive Data
+                </h2>
+                <p>
+                  The Service is not intended for the storage of highly
+                  sensitive personal data, such as health information, financial
+                  credentials, or other categories of data requiring enhanced
+                  protection. Users are responsible for determining the
+                  appropriateness of the Service for their specific use cases.
+                </p>
+              </section>
+
+              <section className="space-y-3">
+                <h2 className="text-2xl font-bold text-[#37322f]">
+                  13. Children
                 </h2>
                 <p>
                   Notedrop is intended only for users aged{" "}
@@ -427,7 +528,7 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  12. Self-Hosting
+                  14. Self-Hosting
                 </h2>
                 <p>If you self-host Notedrop:</p>
                 <ul className="list-disc pl-6 space-y-2">
@@ -476,7 +577,7 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  13. Service Continuity
+                  15. Service Continuity
                 </h2>
                 <p>
                   Notedrop is developed and maintained by an individual
@@ -500,12 +601,13 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  14. Data Breaches
+                  16. Data Breaches
                 </h2>
                 <p>In the event of a personal data breach, we will:</p>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
-                    Notify the relevant supervisory authority where required
+                    Notify the relevant supervisory authority{" "}
+                    <strong>within 72 hours</strong> where required under GDPR
                   </li>
                   <li>
                     Inform affected users without undue delay where there is a
@@ -516,7 +618,7 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  15. Changes to This Policy
+                  17. Changes to This Policy
                 </h2>
                 <ul className="list-disc pl-6 space-y-2">
                   <li>
@@ -531,7 +633,7 @@ export default function PrivacyPage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-bold text-[#37322f]">
-                  16. Contact
+                  18. Contact
                 </h2>
                 <p>If you have questions about this policy:</p>
                 <p>

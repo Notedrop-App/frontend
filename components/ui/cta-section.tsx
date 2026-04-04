@@ -46,7 +46,7 @@ export default function CTASection() {
                   </div>
                 </div>
               </Link>
-              <Link href="https://discord.gg/notedrop" target="_blank">
+              <Link href="https://discord.gg/w6vHMTdR3m" target="_blank">
                 <div className="h-10 px-8 py-[6px] relative border border-[#37322f]/20 overflow-hidden rounded-full flex justify-center items-center cursor-pointer hover:bg-[#37322f]/5 transition-colors gap-2">
                   <ChatCircleIcon className="w-4 h-4 text-[#37322f]" />
                   <div className="flex flex-col justify-center text-[#37322f] text-[13px] font-medium leading-5 font-sans">

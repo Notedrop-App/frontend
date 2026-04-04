@@ -36,7 +36,11 @@ export function Header() {
               {["Features", "Docs", "Privacy"].map((item) => (
                 <Link
                   key={item}
-                  href={item.toLowerCase()}
+                  href={
+                    item.toLowerCase() === "privacy"
+                      ? "/legal/privacy"
+                      : `/${item.toLowerCase()}`
+                  }
                   className="relative inline-block group"
                 >
                   {item}
