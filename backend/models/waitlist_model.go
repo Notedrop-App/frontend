@@ -4,5 +4,5 @@ import "gorm.io/gorm"
 
 type Waitlist struct {
 	gorm.Model
-	Email string `json:"email"`
+	Email string `gorm:"unique;not null;type:varchar(100)"`
 }

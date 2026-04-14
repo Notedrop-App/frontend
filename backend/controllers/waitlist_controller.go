@@ -2,7 +2,7 @@ package controllers
 
 import (
 	"github.com/gofiber/fiber/v3"
-	"github.com/notedrop-app/backend/models"
+	"github.com/notedrop-app/backend/dto"
 	"github.com/notedrop-app/backend/services"
 	"gorm.io/gorm"
 )
@@ -11,7 +11,7 @@ func Join(db *gorm.DB) fiber.Handler {
 
 	return func(c fiber.Ctx) error {
 
-		var waitlist models.Waitlist
+		var waitlist dto.WaitlistDto
 
 		err := c.Bind().Body(&waitlist)
 
