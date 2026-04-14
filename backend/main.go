@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/goccy/go-json"
@@ -17,6 +18,12 @@ func init() {
 	if err != nil {
 		return
 	}
+
+	if os.Getenv("ENV") != "PROD" {
+		db.Migrate(db.DB)
+	} else {
+		fmt.Println("Skipping Migration, Production environment detected.")
+	}
 }
 
 func main() {
@@ -28,6 +35,10 @@ func main() {
 		JSONDecoder: json.Unmarshal,
 	})
 	api := app.Group("/api/v1")
+
+	api.Get("/health", func(c fiber.Ctx) error {
+		return c.SendStatus(200)
+	})
 
 	api.Post("/waitlist/join", controllers.Join(db.DB))
 
