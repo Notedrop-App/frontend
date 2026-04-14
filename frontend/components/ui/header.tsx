@@ -17,15 +17,18 @@ import { Input } from "./input";
 import { Label } from "./label";
 import { Checkbox } from "./checkbox";
 import { Spinner } from "./spinner";
+import { LockKeyIcon, LockKeyOpenIcon } from "@phosphor-icons/react";
 
 export function Header() {
   const [menuOpen, setIsMenuOpen] = useState<boolean>(false);
   const [termsAccepted, setIsTermsAccepted] = useState<boolean>(false);
-  const [Issubmiting, SetIsSubmiting] = useState<boolean>(false);
+  const [Issubmiting, setIsSubmiting] = useState<boolean>(false);
+  const [Togglepassword, setTogglePassword] = useState<boolean>(false);
+  const [Email, setEmail] = useState<string>("");
+  const [Username, setUsername] = useState<string>("");
+  const [Password, setPassword] = useState<string>("");
 
-  function CreateAccount() {
-    SetIsSubmiting(true);
-  }
+  function CreateAccount() {}
 
   return (
     <div className="flex items-center justify-center mt-9">
@@ -112,14 +115,33 @@ export function Header() {
             type="email"
             className="h-10"
             id="email-input"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <Label htmlFor="username-input">Username</Label>
+          <Input
+            placeholder="Username"
+            type="text"
+            className="h-10"
+            id="username-input"
+            onChange={(e) => setUsername(e.target.value)}
           />
           <Label htmlFor="password-input">Password</Label>
-          <Input
-            placeholder="Password"
-            type={"password"}
-            className="h-10"
-            id="email-input"
-          />
+          <div className="flex items-center justfiy-center">
+            <Input
+              placeholder="Password"
+              type={Togglepassword ? "text" : "password"}
+              className="h-10"
+              id="email-input"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Button
+              className="absolute right-5"
+              variant={"ghost"}
+              onClick={() => setTogglePassword(!Togglepassword)}
+            >
+              {Togglepassword ? <LockKeyOpenIcon /> : <LockKeyIcon />}
+            </Button>
+          </div>
           <div className="flex flex-row space-x-3 items-center">
             <Checkbox
               defaultChecked={false}
