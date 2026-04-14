@@ -5,20 +5,18 @@ import Image from "next/image";
 import Link from "next/link";
 import { ListIcon } from "@phosphor-icons/react/dist/ssr";
 import { Button } from "./button";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-} from "./sheet";
+import { Sheet, SheetContent, SheetFooter, SheetTitle } from "./sheet";
 import { useState } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+} from "./dialog";
+import { Input } from "./input";
 
 export function Header() {
   const [menuOpen, setIsMenuOpen] = useState<boolean>(false);
-
-  function openHamburgerMenu() {}
 
   return (
     <div className="flex items-center justify-center mt-9">
@@ -96,6 +94,12 @@ export function Header() {
           </SheetFooter>
         </SheetContent>
       </Sheet>
+      <Dialog open={true}>
+        <DialogContent>
+          <DialogTitle>Create Account</DialogTitle>
+          <Input placeholder="Email Address" type="email" className="h-10" />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }
