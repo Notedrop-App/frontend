@@ -6,6 +6,7 @@ import (
 
 	"github.com/goccy/go-json"
 	"github.com/gofiber/fiber/v3"
+	"github.com/gofiber/fiber/v3/middleware/cors"
 	"github.com/notedrop-app/backend/controllers"
 	"github.com/notedrop-app/backend/db"
 	"github.com/notedrop-app/backend/utils"
@@ -34,6 +35,14 @@ func main() {
 		JSONEncoder: json.Marshal,
 		JSONDecoder: json.Unmarshal,
 	})
+
+	app.Use(cors.New(cors.Config{
+		AllowOrigins:     []string{os.Getenv("ALLOWED_ORIGIN")},
+		AllowMethods:     []string{"GET", "POST", "DELETE", "PUT"},
+		AllowHeaders:     []string{"Origin", "Content-Type", "Authorization"},
+		AllowCredentials: true,
+	}))
+
 	api := app.Group("/api/v1")
 
 	api.Get("/health", func(c fiber.Ctx) error {
