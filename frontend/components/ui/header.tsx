@@ -14,9 +14,18 @@ import {
   DialogTitle,
 } from "./dialog";
 import { Input } from "./input";
+import { Label } from "./label";
+import { Checkbox } from "./checkbox";
+import { Spinner } from "./spinner";
 
 export function Header() {
   const [menuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [termsAccepted, setIsTermsAccepted] = useState<boolean>(false);
+  const [Issubmiting, SetIsSubmiting] = useState<boolean>(false);
+
+  function CreateAccount() {
+    SetIsSubmiting(true);
+  }
 
   return (
     <div className="flex items-center justify-center mt-9">
@@ -95,9 +104,54 @@ export function Header() {
         </SheetContent>
       </Sheet>
       <Dialog open={true}>
-        <DialogContent>
-          <DialogTitle>Create Account</DialogTitle>
-          <Input placeholder="Email Address" type="email" className="h-10" />
+        <DialogContent className="p-4 flex justify-center flex-col">
+          <DialogTitle className="text-xl">Create Account</DialogTitle>
+          <Label htmlFor="email-input">Email Address</Label>
+          <Input
+            placeholder="Email Address"
+            type="email"
+            className="h-10"
+            id="email-input"
+          />
+          <Label htmlFor="password-input">Password</Label>
+          <Input
+            placeholder="Password"
+            type={"password"}
+            className="h-10"
+            id="email-input"
+          />
+          <div className="flex flex-row space-x-3 items-center">
+            <Checkbox
+              defaultChecked={false}
+              onCheckedChange={() => [
+                setIsTermsAccepted(!termsAccepted),
+                console.log(termsAccepted),
+              ]}
+            />
+            <p>
+              I accept{" "}
+              <a className="underline" href="legal/terms">
+                Terms of Service
+              </a>{" "}
+              And{" "}
+              <a className="underline" href="legal/privacy">
+                Privacy Policy
+              </a>
+            </p>
+          </div>
+          <Button
+            onClick={() => CreateAccount()}
+            className="h-10 px-4 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
+          >
+            {Issubmiting ? (
+              <>
+                {" "}
+                <Spinner /> Creating your Account
+              </>
+            ) : (
+              "Create your Account"
+            )}
+          </Button>
         </DialogContent>
       </Dialog>
     </div>
