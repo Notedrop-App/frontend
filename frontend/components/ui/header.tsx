@@ -31,7 +31,33 @@ export function Header() {
   const [Password, setPassword] = useState<string>("");
   const [SignUpError, setSignUpError] = useState<string>("");
 
-  async function CreateAccount() {}
+  async function CreateAccount() {
+    if (!termsAccepted) {
+      setSignUpError("Please Accept ToS & Privacy Policy");
+    }
+    if (Email === "" || Password === "" || Username == "") {
+      setSignUpError("Please provide your account details.");
+    }
+
+    try {
+      //Derive publicKey and Salt for your new keypair.
+      const { publicKey, saltKdf } = await deriveKeypair(Password);
+
+      await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/signup`, {
+        method: "POST",
+        body: JSON.stringify({
+          email: Email,
+          password: Password,
+          username: Username,
+          public_key: Buffer.from(publicKey).toString("base64"),
+          salt_kdf: Buffer.from(saltKdf).toString("base64"),
+        }),
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
   return (
     <div className="flex items-center justify-center mt-9">

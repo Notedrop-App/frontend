@@ -16,8 +16,8 @@ func Join(db *gorm.DB) fiber.Handler {
 		err := c.Bind().Body(&waitlist)
 
 		if err != nil {
-			return c.Status(fiber.ErrBadRequest.Code).JSON(fiber.Map{
-				"message": err,
+			return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
+				"message": err.Error(),
 				"error":   true,
 			})
 		}
