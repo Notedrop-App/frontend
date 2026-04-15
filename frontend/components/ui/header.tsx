@@ -24,11 +24,21 @@ export function Header() {
   const [termsAccepted, setIsTermsAccepted] = useState<boolean>(false);
   const [Issubmiting, setIsSubmiting] = useState<boolean>(false);
   const [Togglepassword, setTogglePassword] = useState<boolean>(false);
+  const [SignUpOpen, setIsSignUpOpen] = useState<boolean>(false);
   const [Email, setEmail] = useState<string>("");
   const [Username, setUsername] = useState<string>("");
   const [Password, setPassword] = useState<string>("");
+  const [SignUpError, setSignUpError] = useState<string>("");
 
-  function CreateAccount() {}
+  function CreateAccount() {
+    if (!termsAccepted) {
+      setSignUpError("Please accept ToS & Privacy Policy");
+    }
+
+    if (Email === "" || Password === "" || Username === "") {
+      setSignUpError("Please Fill Your Details");
+    }
+  }
 
   return (
     <div className="flex items-center justify-center mt-9">
@@ -57,7 +67,10 @@ export function Header() {
                   <span className="absolute bottom-[-2px] left-0 h-[1.5px] w-0 bg-[#37322f] transition-all duration-300 ease-in-out group-hover:w-full" />
                 </Link>
               ))}
-              <Button className="h-7 px-4 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]">
+              <Button
+                onClick={() => setIsSignUpOpen(true)}
+                className="h-7 px-4 bg-[#37322f] hover:bg-[#37322f]/90 text-white rounded-full font-medium text-sm shadow-[0px_0px_0px_2.5px_rgba(255,255,255,0.08)_inset]"
+              >
                 Sign Up
               </Button>
             </div>
@@ -97,7 +110,11 @@ export function Header() {
                 </Link>
               ))}
             </div>
-            <Button variant="outline" className="w-fit px-6">
+            <Button
+              variant="outline"
+              className="w-fit px-6"
+              onClick={() => setIsSignUpOpen(true)}
+            >
               Sign Up →
             </Button>
           </div>
@@ -106,7 +123,7 @@ export function Header() {
           </SheetFooter>
         </SheetContent>
       </Sheet>
-      <Dialog open={true}>
+      <Dialog open={SignUpOpen} onOpenChange={setIsSignUpOpen}>
         <DialogContent className="p-4 flex justify-center flex-col">
           <DialogTitle className="text-xl">Create Account</DialogTitle>
           <Label htmlFor="email-input">Email Address</Label>
@@ -142,6 +159,7 @@ export function Header() {
               {Togglepassword ? <LockKeyOpenIcon /> : <LockKeyIcon />}
             </Button>
           </div>
+          <p className="text-red-500">{SignUpError}</p>
           <div className="flex flex-row space-x-3 items-center">
             <Checkbox
               defaultChecked={false}
