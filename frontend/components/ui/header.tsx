@@ -18,6 +18,7 @@ import { Label } from "./label";
 import { Checkbox } from "./checkbox";
 import { Spinner } from "./spinner";
 import { LockKeyIcon, LockKeyOpenIcon } from "@phosphor-icons/react";
+import { deriveKeypair } from "@/lib/deriveKeypair";
 
 export function Header() {
   const [menuOpen, setIsMenuOpen] = useState<boolean>(false);
@@ -30,15 +31,7 @@ export function Header() {
   const [Password, setPassword] = useState<string>("");
   const [SignUpError, setSignUpError] = useState<string>("");
 
-  function CreateAccount() {
-    if (!termsAccepted) {
-      setSignUpError("Please accept ToS & Privacy Policy");
-    }
-
-    if (Email === "" || Password === "" || Username === "") {
-      setSignUpError("Please Fill Your Details");
-    }
-  }
+  async function CreateAccount() {}
 
   return (
     <div className="flex items-center justify-center mt-9">
