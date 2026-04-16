@@ -12,8 +12,8 @@ type UserSignUp struct {
 	Email     string
 	Password  string
 	Username  string
-	PublicKey []byte
-	SaltKdf   []byte
+	PublicKey string
+	SaltKdf   string
 }
 
 func SignUp(user UserSignUp, db *gorm.DB) error {

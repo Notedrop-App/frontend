@@ -7,7 +7,7 @@ type User struct {
 	Email        string `gorm:"unique;not null;type:varchar(100);uniqueIndex"`
 	PasswordHash string `gorm:"not null"`
 	Username     string `gorm:"unique;not null; type:varchar(32);uniqueIndex"`
-	PublicKey    []byte `gorm:"unique;not null;type:bytea"`
-	SaltKdf      []byte `gorm:"not null;type:bytea"`
+	PublicKey    string `gorm:"unique;not null;type:text"`
+	SaltKdf      string `gorm:"not null;type:text"`
 	AvatarUrl    string `gorm:"default:null"`
 }
