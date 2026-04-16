@@ -27,8 +27,8 @@ func SignUp(db *gorm.DB) fiber.Handler {
 			Email:     user.Email,
 			Password:  user.Password,
 			Username:  user.Username,
-			PublicKey: []byte(user.PublicKey),
-			SaltKdf:   []byte(user.SaltKdf),
+			PublicKey: user.PublicKey,
+			SaltKdf:   user.SaltKdf,
 		}
 
 		if err := services.SignUp(serviceUser, db); err != nil {
