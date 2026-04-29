@@ -6,6 +6,13 @@ info:
 http:
   method: POST
   url: http://localhost:8080/api/v1/auth/signin
+  body:
+    type: json
+    data: |-
+      {
+        "email": "bartosz.krawczyk34@gmail.com",
+        "password": "Mikadeusz2015!"
+      }
   auth: inherit
 
 settings:

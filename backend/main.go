@@ -52,6 +52,7 @@ func main() {
 	api.Post("/waitlist/join", controllers.Join(db.DB))
 
 	api.Post("/auth/signup", controllers.SignUp(db.DB))
+	api.Post("auth/signin", controllers.SignIn(db.DB))
 
 	app.Listen(":" + port)
 }
