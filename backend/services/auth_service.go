@@ -16,6 +16,15 @@ type UserSignUp struct {
 	SaltKdf   string
 }
 
+type UserSignIn struct {
+	Email    string
+	Password string
+}
+
+type SignInResponse struct {
+	Saltkdf string `json:"salt_kdf"`
+}
+
 func SignUp(user UserSignUp, db *gorm.DB) error {
 
 	var existing models.User
@@ -56,4 +65,31 @@ func SignUp(user UserSignUp, db *gorm.DB) error {
 	}
 
 	return nil
+}
+
+func SignIn(user UserSignIn, db *gorm.DB) (SignInResponse, error) {
+	var existing models.User
+
+	err := db.Where("email = ?", user.Email).First(&existing).Error
+
+	// email is present in database, compare the password
+	if err == nil {
+		password := user.Password
+
+		err = bcrypt.CompareHashAndPassword([]byte(existing.PasswordHash), []byte(password))
+
+		// password hash and password dosen't match
+		if err != nil {
+			return SignInResponse{}, errors.New("Invalid Credentials")
+		}
+
+		return SignInResponse{Saltkdf: existing.SaltKdf}, nil
+
+	}
+
+	if errors.Is(err, gorm.ErrRecordNotFound) {
+		return SignInResponse{}, errors.New("Email not found!")
+	}
+
+	return SignInResponse{}, nil
 }
