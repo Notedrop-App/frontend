@@ -10,11 +10,11 @@ http:
     type: json
     data: |-
       {
-        "email": "bartosz.krawczyk34@gmail.com",
-        "password": "Mikadeusz2015!",
-        "username": "SkuliX",
-        "public_key": "ezz",
-        "salt_kdf": "eszaszdasda"
+        "email": "",
+        "password": "",
+        "username": "",
+        "public_key": "",
+        "salt_kdf": ""
       }
   auth: inherit
 
